@@ -19,8 +19,6 @@ development:
   encoding: unicode
   database: social_media_word_cloud_development
   pool: 5
-  username: social_media_word_cloud
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +46,9 @@ test:
   encoding: unicode
   database: social_media_word_cloud_test
   pool: 5
-  username: social_media_word_cloud
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: social_media_word_cloud_production
   pool: 5
-  username: social_media_word_cloud
-  password:
