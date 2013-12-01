@@ -1,1 +1,12 @@
-%h1 Social Media Word Cloud
+.container
+  .row
+    .small-12.columns
+      %h1#title Social Media Word Cloud
+  .row
+    .small-6.columns
+      - @posts.each do |post|
+        %p.name.strong
+          = post.name
+        %h3.post
+          = post.body
+    .small-6-columns#cloud

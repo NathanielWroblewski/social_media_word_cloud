@@ -16,7 +16,7 @@ $(document).ready(function(){
       .start();
 
   function draw(words) {
-    d3.select("body").append("svg")
+    d3.select("#cloud").append("svg")
         .attr("width", 300)
         .attr("height", 300)
       .append("g")
