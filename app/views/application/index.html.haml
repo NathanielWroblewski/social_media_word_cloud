@@ -4,9 +4,23 @@
       %h1#title Social Media Word Cloud
   .row
     .small-6.columns
+      %h3.subheader Recent Posts
+      .post
+        %p.strong
+          Blobbert McBlobbington
+        %p
+          Happy Birthday
+      .post
+        %p.strong
+          Blobbert McBlobbington
+        %p
+          Happy Birthday
       - @posts.each do |post|
-        %p.name.strong
-          = post.name
-        %h3.post
-          = post.body
-    .small-6-columns#cloud
+        .post
+          %p.strong
+            = post.name
+          %p
+            = post.body
+    .small-6-columns
+      %h3.subheader Word Cloud
+      #cloud

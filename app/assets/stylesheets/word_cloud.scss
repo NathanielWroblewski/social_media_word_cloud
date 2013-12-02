@@ -1,7 +1,19 @@
 #title {
+  margin: 20px 0;
   text-align: center;
+}
+
+.subheader {
+  text-align: center
 }
 
 .strong {
   font-weight: bold;
+}
+
+.post {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
 }
