@@ -2,19 +2,6 @@ $(document).ready(function(){
 
   var fill = d3.scale.category20();
 
-  d3.layout.cloud().size([300, 300])
-      .words([
-        "Hello", "world", "normally", "you", "want", "more", "words",
-        "than", "this"].map(function(d) {
-        return {text: d, size: 10 + Math.random() * 90};
-      }))
-      .padding(5)
-      .rotate(function() { return ~~(Math.random() * 2) * 90; })
-      .font("Impact")
-      .fontSize(function(d) { return d.size; })
-      .on("end", draw)
-      .start();
-
   function draw(words) {
     d3.select("#cloud").append("svg")
         .attr("width", 300)
@@ -33,4 +20,17 @@ $(document).ready(function(){
         })
         .text(function(d) { return d.text; });
   }
+
+  $.get('/posts').done(function(response) {
+    d3.layout.cloud().size([300, 300])
+      .words(response.words.map(function(d, i) {
+        return {text: d, size: response.frequencies[i]};
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 2) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+  })
 });
