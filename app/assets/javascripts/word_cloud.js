@@ -24,7 +24,7 @@ $(document).ready(function(){
   $.get('/posts').done(function(response) {
     d3.layout.cloud().size([300, 300])
       .words(response.words.map(function(d, i) {
-        return {text: d, size: response.frequencies[i]};
+        return {text: d, size: (parseInt(response.frequencies[i]) * 15)};
       }))
       .padding(5)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })

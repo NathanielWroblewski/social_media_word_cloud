@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   end
 
   def parse_body
-    body.strip.downcase.gsub(/[^a-zA-Z]/, '').split(' ')
+    body.strip.downcase.gsub(/[^a-zA-Z ]/, '').split(' ')
   end
 
   def self.word_frequencies
